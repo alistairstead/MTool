@@ -43,7 +43,7 @@ class Mtool_Codegen_Filesystem
                 "Cannot create directory {$path}.  Maybe permissions problem?"
             );
         }
-        system('chmod -R 755 ' . $path);
+        system('chmod -R 755 ' . escapeshellarg($path));
     }
 
     /**
@@ -82,7 +82,7 @@ class Mtool_Codegen_Filesystem
                 "Cannot write into file {$filepath}"
             );
         }
-        system('chmod -R 644 ' . $filepath);
+        system('chmod -R 644 ' . escapeshellarg($filepath));
         return $result;
     }
 
